@@ -1,0 +1,10 @@
+
+<div class="search">
+  <form class="form-group" [formGroup]="searchForm">
+    <input formControlName="searchBar" class="form-control form-control-lg" type="text" placeholder="Enter Starting Ingredient" />
+    <div class="list-group-flush results">
+      <button *ngFor="let ingredient of getIngredients()" type="button" class="list-group-item list-group-item-action" (click)="ingredient!=='...'? selectIngredient(ingredient):_void">{{ ingredient }}</button>
+    </div>
+  </form>
+  <!-- value: {{searchForm.controls.searchBar.value}} -->
+</div>
